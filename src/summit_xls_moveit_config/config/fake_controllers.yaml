@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_wheels_controller
+    type: $(arg execution_type)
+    joints:
+      - summit_xl_back_left_wheel_joint
+      - summit_xl_back_right_wheel_joint
+      - summit_xl_front_left_wheel_joint
+      - summit_xl_front_right_wheel_joint
+initial:  # Define initial robot poses.
+  - group: wheels
+    pose: default

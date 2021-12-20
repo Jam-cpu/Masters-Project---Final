@@ -1,0 +1,184 @@
+<robot name="bravo7">
+    <link name="base_link"/>
+    <material name="bravo_black">
+    <color rgba="0.3 0.3 0.3 1"/>
+    </material>
+    <joint name="bravo_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="bravo_base_link"/>
+    </joint>
+    <link name="bravo_base_link"/>
+
+
+    <link name="bravo_rs2_266_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-266.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="bravo_rs2_266_joint" type="fixed">
+        <parent link="bravo_base_link"/>
+        <child link="bravo_rs2_266_link"/>
+        <origin rpy="0 0 0"/>
+    </joint>
+
+    <link name="bravo_rs2_217_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-217.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="joint1" type="revolute">
+        <parent link="bravo_rs2_266_link"/>
+        <child link="bravo_rs2_217_link"/>
+        <origin rpy="0 0 0" xyz="0.0665 0 0.078"/>
+        <axis xyz="0 0 -1"/>
+        <limit effort="9.0" lower="0.0" upper="6.3" velocity="0.5"/>
+    </joint>
+
+    <link name="bravo_rs2_250_212_214_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-250-212-214.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="joint2" type="revolute">
+        <parent link="bravo_rs2_217_link"/>
+        <child link="bravo_rs2_250_212_214_link"/>
+        <origin rpy="0 0 0" xyz="-0.046 0 0.0674"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="9.0" lower="0.0" upper="3.5" velocity="0.5"/>
+    </joint>
+
+    <link name="bravo_rs2_268_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-268.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="joint3" type="revolute">
+        <parent link="bravo_rs2_250_212_214_link"/>
+        <child link="bravo_rs2_268_link"/>
+        <origin rpy="0 0 0" xyz="-0.0052 0 -0.29055"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="9.0" lower="0.0" upper="3.5" velocity="0.5"/>
+    </joint>
+
+
+    <link name="bravo_rs2_214_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-214.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="joint4" type="revolute">
+        <parent link="bravo_rs2_268_link"/>
+        <child link="bravo_rs2_214_link"/>
+        <origin rpy="0 0 0" xyz="0.0408 0 0.09695"/>
+        <axis xyz="0 0 -1"/>
+        <limit effort="9.0" lower="0.0" upper="6.3" velocity="0.5"/>
+    </joint>
+
+    <link name="bravo_rs2_161_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-161.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="joint5" type="revolute">
+        <parent link="bravo_rs2_214_link"/>
+        <child link="bravo_rs2_161_link"/>
+        <origin rpy="0 0 0" xyz="-0.0408 0 0.063"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="9.0" lower="0.0" upper="3.5" velocity="0.5"/>
+    </joint>
+
+
+
+    <link name="bravo_rs2_180_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://bravo_description/meshes/RS2-180.stl"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <link name="force_torque_sensor">
+        <visual>
+            <geometry>
+                <cylinder length="0.06" radius="0.04"/>
+            </geometry>
+            <material name="bravo_black"/>
+        </visual>
+    </link>
+
+    <joint name="FT_fixed_1" type="fixed">
+    <origin rpy="0 0 1.57" xyz=" 0 0 -0.03"/>
+    <parent link="bravo_rs2_180_link"/>
+    <child link="force_torque_sensor"/>
+    </joint>
+
+    <joint name="joint6" type="revolute">
+        <parent link="bravo_rs2_161_link"/>
+        <child link="bravo_rs2_180_link"/>
+        <origin rpy="0 3.14159 0" xyz="-0.0408 0 -0.14863"/>
+        <axis xyz="0 0 -1"/>
+        <limit effort="9.0" lower="0.0" upper="6.3" velocity="0.5"/>
+    </joint>
+
+    <joint name="bravo_jaws_joint" type="fixed">
+    <origin rpy="0 0 0" xyz=" 0 0 0.124"/>
+    <parent link="bravo_rs2_180_link"/>
+    <child link="bravo_jaws_base_link"/>
+  </joint>
+
+    <material name="bravo_jaws_black">
+    <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+
+  <link name="bravo_jaws_base_link"/>       
+   
+    
+
+<!-- contact_point_joint -->
+  <joint name="contact_point_joint" type="fixed">
+<!-- 0.16/0.185 for plastic/metal tool with boardmarker-->
+<!-- 0.15/0.21 for blue/white polymer tool with sponge -->
+    <origin rpy="0 0 0" xyz="0 0 0.315"/>
+    <parent link="force_torque_sensor"/>
+    <child link="contact_point"/>
+  </joint>
+
+<!-- contact_point -->
+  <link name="contact_point">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="Red"/>
+    </visual>
+  </link>
+
+
+</robot>

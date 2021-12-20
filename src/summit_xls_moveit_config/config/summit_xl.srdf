@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="summit_xl">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="wheels">
+        <joint name="summit_xl_back_left_wheel_joint" />
+        <joint name="summit_xl_front_left_wheel_joint" />
+        <joint name="summit_xl_front_right_wheel_joint" />
+        <joint name="summit_xl_back_right_wheel_joint" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="default" group="wheels">
+        <joint name="summit_xl_back_left_wheel_joint" value="0" />
+        <joint name="summit_xl_back_right_wheel_joint" value="0" />
+        <joint name="summit_xl_front_left_wheel_joint" value="0" />
+        <joint name="summit_xl_front_right_wheel_joint" value="0" />
+    </group_state>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="back_left_wheel" type="planar" parent_frame="odom" child_link="summit_xl_back_left_wheel_link" />
+    <virtual_joint name="back_right_wheel" type="planar" parent_frame="odom" child_link="summit_xl_back_right_wheel_link" />
+    <virtual_joint name="front_left_wheel" type="planar" parent_frame="odom" child_link="summit_xl_front_left_wheel_link" />
+    <virtual_joint name="front_right_wheel" type="planar" parent_frame="odom" child_link="summit_xl_front_right_wheel_link" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_back_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_chapa" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_footprint" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_logo_front" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_logo_left" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_left_wheel_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_chapa" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_footprint" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_logo_front" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_logo_left" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_back_right_wheel_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_footprint" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_logo_front" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_logo_left" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_chapa" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_base_logo_front" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_base_logo_left" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_footprint" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_base_logo_front" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_base_logo_left" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_base_logo_rear" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_base_logo_right" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_front_laser_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_front_left_wheel_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_front_rgbd_camera_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_front_right_wheel_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_imu_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_link" link2="summit_xl_rear_laser_base_link" reason="Adjacent" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_base_logo_left" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_front" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_base_logo_rear" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_left" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_base_logo_right" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_rear" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_front_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_base_logo_right" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_laser_base_link" link2="summit_xl_front_left_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_laser_base_link" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_laser_base_link" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_laser_base_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_laser_base_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_left_wheel_link" link2="summit_xl_front_rgbd_camera_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_left_wheel_link" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_left_wheel_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_left_wheel_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_rgbd_camera_link" link2="summit_xl_front_right_wheel_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_rgbd_camera_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_rgbd_camera_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_right_wheel_link" link2="summit_xl_imu_link" reason="Never" />
+    <disable_collisions link1="summit_xl_front_right_wheel_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+    <disable_collisions link1="summit_xl_imu_link" link2="summit_xl_rear_laser_base_link" reason="Never" />
+</robot>

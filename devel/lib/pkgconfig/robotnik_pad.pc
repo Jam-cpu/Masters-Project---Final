@@ -1,0 +1,8 @@
+prefix=/workspace/devel
+
+Name: robotnik_pad
+Description: Description of robotnik_pad
+Version: 0.0.0
+Cflags: -I/workspace/src/robotnik_pad/robotnik_pad/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rcomponent robotnik_msgs sensor_msgs geometry_msgs ackermann_msgs pluginlib

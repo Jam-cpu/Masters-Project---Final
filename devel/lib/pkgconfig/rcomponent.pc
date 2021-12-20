@@ -1,0 +1,8 @@
+prefix=/workspace/devel
+
+Name: rcomponent
+Description: Description of rcomponent
+Version: 1.2.0
+Cflags: -I/workspace/src/rcomponent/include
+Libs: -L${prefix}/lib -lrcomponent
+Requires: robotnik_msgs

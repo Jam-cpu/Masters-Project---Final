@@ -1,0 +1,46 @@
+... logging to /home/developer/.ros/log/e3951d58-3aed-11ec-899f-0242ac120003/roslaunch-12722eb28bff-17169.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/workspace/src/summit_xl_common/summit_xl_description/launch/summit_xl_rviz2.launch
+... loading XML file [/opt/ros/melodic/etc/ros/roscore.xml]
+... executing command param [rosversion roslaunch]
+Added parameter [/rosversion]
+... executing command param [rosversion -d]
+Added parameter [/rosdistro]
+Added core node of type [rosout/rosout] in namespace [/]
+... loading XML file [/workspace/src/summit_xl_common/summit_xl_description/launch/summit_xl_rviz2.launch]
+... executing command param [/opt/ros/melodic/lib/xacro/xacro '/workspace/src/summit_xl_common/summit_xl_description/robots/summit_xls_std.urdf.xacro' prefix:=summit_xl_ --inorder]
+Added parameter [/robot_description]
+Added parameter [/joint_state_publisher/use_gui]
+Added node of type [joint_state_publisher/joint_state_publisher] in namespace [/]
+Added node of type [robot_state_publisher/robot_state_publisher] in namespace [/]
+Added node of type [rviz/rviz] in namespace [/]
+[1mstarted roslaunch server http://12722eb28bff:41755/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /joint_state_publisher/use_gui: True
+ * /robot_description: <?xml version="1....
+ * /rosdistro: melodic
+ * /rosversion: 1.14.12
+
+NODES
+  /
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    rviz (rviz/rviz)
+
+[1mROS_MASTER_URI=http://simulator:11311/[0m
+]2;/workspace/src/summit_xl_common/summit_xl_description/launch/summit_xl_rviz2.launch http://simulator:11311/
+[1mprocess[joint_state_publisher-1]: started with pid [17207][0m
+[1mprocess[robot_state_publisher-2]: started with pid [17208][0m
+[1mprocess[rviz-3]: started with pid [17209][0m
+[rviz-3] killing on exit
+[robot_state_publisher-2] killing on exit
+[joint_state_publisher-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

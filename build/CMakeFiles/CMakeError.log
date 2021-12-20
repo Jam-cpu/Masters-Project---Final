@@ -1,0 +1,97 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /workspace/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_605bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_605bb.dir/build.make CMakeFiles/cmTC_605bb.dir/build
+make[1]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_605bb.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_605bb.dir/CheckSymbolExists.c.o   -c /workspace/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_605bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_605bb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_605bb.dir/CheckSymbolExists.c.o  -o cmTC_605bb 
+CMakeFiles/cmTC_605bb.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_605bb.dir/build.make:97: recipe for target 'cmTC_605bb' failed
+make[1]: *** [cmTC_605bb] Error 1
+make[1]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_605bb/fast' failed
+make: *** [cmTC_605bb/fast] Error 2
+
+File /workspace/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspace/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_34362/fast"
+/usr/bin/make -f CMakeFiles/cmTC_34362.dir/build.make CMakeFiles/cmTC_34362.dir/build
+make[1]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_34362.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_34362.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_34362
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34362.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_34362.dir/CheckFunctionExists.c.o  -o cmTC_34362 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_34362.dir/build.make:97: recipe for target 'cmTC_34362' failed
+make[1]: *** [cmTC_34362] Error 1
+make[1]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_34362/fast' failed
+make: *** [cmTC_34362/fast] Error 2
+
+
+Determining if the include file FL/Fl.H exists failed with the following output:
+Change Dir: /workspace/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b3119/fast"
+make[1]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_b3119.dir/build.make CMakeFiles/cmTC_b3119.dir/build
+make[2]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b3119.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_b3119.dir/CheckIncludeFile.cxx.o -c /workspace/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/workspace/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: FL/Fl.H: No such file or directory
+ #include <FL/Fl.H>
+          ^~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_b3119.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b3119.dir/CheckIncludeFile.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_b3119.dir/CheckIncludeFile.cxx.o] Error 1
+make[2]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b3119/fast' failed
+make[1]: *** [cmTC_b3119/fast] Error 2
+make[1]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pgm.h exists failed with the following output:
+Change Dir: /workspace/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ca5e1/fast"
+make[1]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ca5e1.dir/build.make CMakeFiles/cmTC_ca5e1.dir/build
+make[2]: Entering directory '/workspace/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ca5e1.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_ca5e1.dir/CheckIncludeFile.cxx.o -c /workspace/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/workspace/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: pgm.h: No such file or directory
+ #include <pgm.h>
+          ^~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_ca5e1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ca5e1.dir/CheckIncludeFile.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_ca5e1.dir/CheckIncludeFile.cxx.o] Error 1
+make[2]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ca5e1/fast' failed
+make[1]: *** [cmTC_ca5e1/fast] Error 2
+make[1]: Leaving directory '/workspace/build/CMakeFiles/CMakeTmp'
+
+

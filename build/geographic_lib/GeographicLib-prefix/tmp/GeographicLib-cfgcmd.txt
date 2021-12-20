@@ -1,0 +1,1 @@
+cmd='cd;/workspace/build/GeographicLib-prefix/src/GeographicLib;&&;cmake;-D;CMAKE_INSTALL_PREFIX=/workspace/devel;-D;GEOGRAPHICLIB_DATA=/workspace/devel/share/geographic_lib/data;.'

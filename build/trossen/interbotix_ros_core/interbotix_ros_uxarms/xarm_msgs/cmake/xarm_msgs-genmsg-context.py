@@ -1,0 +1,11 @@
+# generated from genmsg/cmake/pkg-genmsg.context.in
+
+messages_str = "/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/msg/RobotMsg.msg;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/msg/IOState.msg"
+services_str = "/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/Move.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/SetAxis.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/SetInt16.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/TCPOffset.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/SetDigitalIO.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GetDigitalIO.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GetAnalogIO.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/ClearErr.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GetErr.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GripperConfig.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GripperMove.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GripperState.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/SetLoad.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/SetToolModbus.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/ConfigToolModbus.srv;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/srv/GetControllerDigitalIO.srv"
+pkg_name = "xarm_msgs"
+dependencies_str = "std_msgs"
+langs = "gencpp;geneus;genlisp;gennodejs;genpy"
+dep_include_paths_str = "xarm_msgs;/workspace/src/trossen/interbotix_ros_core/interbotix_ros_uxarms/xarm_msgs/msg;std_msgs;/opt/ros/melodic/share/std_msgs/cmake/../msg"
+PYTHON_EXECUTABLE = "/usr/bin/python2"
+package_has_static_sources = '' == 'TRUE'
+genmsg_check_deps_script = "/opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

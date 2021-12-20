@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<robot name="summit_xls">
+
+    <group name="wheels">
+        <joint name="front_right_wheel_joint"/>
+        <joint name="back_right_wheel_joint"/>
+        <joint name="back_left_wheel_joint"/>
+        <joint name="front_left_wheel_joint"/>
+    </group>
+
+</robot>
