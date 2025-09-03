@@ -13,3 +13,4 @@ I created a script that updates the debian package list and installs all the dep
 This is called dependency_installations.sh.
 This removes the need to troubleshoot missing packages every time you start a new session.
 # Masters-Project---Final
+This demonstrates the simulation of automatic path finding through reverse kinematics, IR sensors and mecanum wheels with the Robotnik Summit XL
